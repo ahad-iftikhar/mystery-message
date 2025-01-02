@@ -37,5 +37,3 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: "/about/:path*",
 };
-
-// Fix bug in this file
