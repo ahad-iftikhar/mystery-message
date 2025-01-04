@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
     } else {
       const hashedPassword = await bcrypt.hash(password, 10);
       const expiryDate = new Date();
-      expiryDate.setDate(expiryDate.getHours() + 1);
+      expiryDate.setHours(expiryDate.getHours() + 1);
 
       const newUser = new User({
         username,
@@ -81,8 +81,8 @@ export async function POST(request: NextRequest) {
 
     return Response.json(
       {
-        success: false,
-        message: "User registered successfully. Please verfiy your email",
+        success: true,
+        message: "User registered successfully. Please verfiy your account",
       },
       { status: 201 }
     );
