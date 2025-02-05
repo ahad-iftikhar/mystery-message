@@ -91,7 +91,7 @@ const page = () => {
   const handleSwitchChange = async () => {
     try {
       const response = await axios.post<ApiResponse>("/api/accept-messages", {
-        acceptMesssages: !acceptMessages,
+        acceptMessages: !acceptMessages,
       });
       setValue("acceptMessages", !acceptMessages);
       toast({
@@ -115,7 +115,7 @@ const page = () => {
   }
 
   const { username } = session?.user as User;
-  const baseUrl = `${window.location.protocol}://${window.location.host}`;
+  const baseUrl = `${window.location.protocol}//${window.location.host}`;
   const profileUrl = `${baseUrl}/u/${username}`;
 
   const copyToClipboard = () => {
