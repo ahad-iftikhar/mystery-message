@@ -4,6 +4,7 @@ import MessageCard from "@/components/MessageCard";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useToast } from "@/hooks/use-toast";
 import { Message, User } from "@/model/userModel";
 import { acceptMessageSchema } from "@/schemas/acceptMessageSchema";
@@ -111,7 +112,15 @@ const page = () => {
   };
 
   if (!session || !session.user) {
-    return <div>Please Login</div>;
+    return (
+      <div className="flex flex-col space-y-3 p-12">
+        <Skeleton className="h-[350px] w-full rounded-xl" />
+        <div className="space-y-2">
+          <Skeleton className="h-4 w-full" />
+          <Skeleton className="h-4 w-full" />
+        </div>
+      </div>
+    );
   }
 
   const { username } = session?.user as User;
