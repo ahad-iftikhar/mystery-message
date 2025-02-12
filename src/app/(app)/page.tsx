@@ -14,8 +14,8 @@ import messages from "@/messages.json";
 export default function Home() {
   return (
     <>
-      <main className="flex-grow flex flex-col items-center justify-center px-4 md:px-24 py-12 bg-gray-800 text-white">
-        <section className="text-center mb-8 md:mb-12">
+      <main className="flex-grow flex flex-col md:flex-row items-center justify-center px-4 md:px-24 py-12 bg-white-100 text-black">
+        <section className="mb-8 md:mb-12">
           <h1 className="text-3xl md:text-5xl font-bold">
             Dive into the World of Anonymous Feedback
           </h1>
@@ -47,7 +47,7 @@ export default function Home() {
           <CarouselNext className="text-black" />
         </Carousel>
       </main>
-      <footer className="text-center p-4 md:p-6 bg-gray-900 text-white">
+      <footer className="text-center p-4 md:p-6 bg-white-100 text-black">
         © 2025 True Feedback. All rights reserved.
       </footer>
     </>

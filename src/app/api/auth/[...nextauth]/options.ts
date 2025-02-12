@@ -42,7 +42,8 @@ export const authOptions: NextAuthOptions = {
 
           return user;
         } catch (error: any) {
-          return new Error(error);
+          // return new Error(error);
+          return null;
         }
       },
     }),

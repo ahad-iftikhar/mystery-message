@@ -16,7 +16,7 @@ const Navbar = () => {
         <a href="#" className="text-xl font-bold mb-4 md:mb-0">
           Mystry Message
         </a>
-        {session && (
+        {session ? (
           <>
             <span className="mr-4 text-black">
               Welcome, {user?.username || user?.email}
@@ -29,6 +29,15 @@ const Navbar = () => {
               Logout
             </Button>
           </>
+        ) : (
+          <Link href="/sign-in">
+            <Button
+              className="w-full md:w-auto bg-gray-900 text-white hover:bg-gray-700 hover:text-white"
+              variant={"outline"}
+            >
+              Login
+            </Button>
+          </Link>
         )}
       </div>
     </nav>

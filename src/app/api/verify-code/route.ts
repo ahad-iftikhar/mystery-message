@@ -43,15 +43,15 @@ export async function POST(request: Request) {
       );
     }
 
-    // user.isVerified = true;
-    // await user.save();
-    await User.updateOne(
-      { username: decodedUsername },
-      {
-        $set: { isVerified: true },
-        $unset: { verifyCode: 1, verifyCodeExpiry: 1 },
-      }
-    );
+    user.isVerified = true;
+    await user.save();
+    // await User.updateOne(
+    //   { username: decodedUsername },
+    //   {
+    //     $set: { isVerified: true },
+    //     $unset: { verifyCode: 1, verifyCodeExpiry: 1 },
+    //   }
+    // );
 
     return Response.json(
       {
