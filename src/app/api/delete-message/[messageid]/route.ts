@@ -3,10 +3,14 @@ import userModel from "@/model/userModel";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../auth/[...nextauth]/options";
 import { User } from "next-auth";
-import mongoose from "mongoose";
+import { NextRequest } from "next/server";
 
+// export async function DELETE(
+//   request: Request,
+//   { params }: { params: { messageid: string } }
+// ) {
 export async function DELETE(
-  request: Request,
+  request: NextRequest,
   { params }: { params: { messageid: string } }
 ) {
   await dbConnect();
@@ -25,7 +29,7 @@ export async function DELETE(
     );
   }
 
-  const userId = new mongoose.Types.ObjectId(user._id);
+  // const userId = new mongoose.Types.ObjectId(user._id);
   try {
     const updatedResult = await userModel.updateOne(
       { _id: user._id },

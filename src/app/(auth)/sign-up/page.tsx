@@ -78,7 +78,7 @@ const Page = () => {
     } catch (error) {
       console.error("Error in sing-up of user", error);
       const axiosError = error as AxiosError<ApiResponse>;
-      let errorMessage = axiosError.response?.data.message;
+      const errorMessage = axiosError.response?.data.message;
       toast({
         title: "Signup failed",
         description: errorMessage,
