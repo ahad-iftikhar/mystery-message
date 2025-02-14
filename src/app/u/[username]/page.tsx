@@ -21,7 +21,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-const page = () => {
+const Page = () => {
   const { toast } = useToast();
   const [suggestedMessages, setSuggestedMessages] = useState([
     "What's your favourite movie?",
@@ -178,4 +178,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
