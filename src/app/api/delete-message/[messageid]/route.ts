@@ -10,12 +10,14 @@ import { NextRequest } from "next/server";
 //   { params }: { params: { messageid: string } }
 // ) {
 export async function DELETE(
-  request: NextRequest,
-  { params }: { params: { messageid: string } }
+  req: NextRequest,
+  context: { params: Promise<{ messageid: string }> }
 ) {
+  const { messageid } = await context.params;
   await dbConnect();
 
-  const messageId = params.messageid;
+  // const messageId = params.messageid;
+  const messageId = messageid;
   const session = await getServerSession(authOptions);
   const user: User = session?.user as User;
 
